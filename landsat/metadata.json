@@ -1,0 +1,247 @@
+[
+  {
+    "year": 1984,
+    "date": "1984-09-30",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_19840930_02_T1+LT05_L2SP_230075_19840930_02_T1"
+  },
+  {
+    "year": 1986,
+    "date": "1986-09-20",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 3.0,
+    "scene_id": "LT05_L2SP_230076_19860920_02_T1+LT05_L2SP_230075_19860920_02_T1"
+  },
+  {
+    "year": 1987,
+    "date": "1987-09-23",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_19870923_02_T1+LT05_L2SP_230075_19870923_02_T1"
+  },
+  {
+    "year": 1988,
+    "date": "1988-08-24",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 32.5,
+    "scene_id": "LT05_L2SP_230076_19880824_02_T1+LT05_L2SP_230075_19880824_02_T1"
+  },
+  {
+    "year": 1989,
+    "date": "1989-08-19",
+    "satellite": "LANDSAT_4",
+    "cloud_cover": 0.0,
+    "scene_id": "LT04_L2SP_230076_19890819_02_T1+LT04_L2SP_230075_19890819_02_T1"
+  },
+  {
+    "year": 1990,
+    "date": "1990-09-15",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_19900915_02_T1+LT05_L2SP_230075_19900915_02_T1"
+  },
+  {
+    "year": 1991,
+    "date": "1991-08-17",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 3.5,
+    "scene_id": "LT05_L2SP_230076_19910817_02_T1+LT05_L2SP_230075_19910817_02_T1"
+  },
+  {
+    "year": 1992,
+    "date": "1992-09-20",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 1.5,
+    "scene_id": "LT05_L2SP_230076_19920920_02_T1+LT05_L2SP_230075_19920920_02_T1"
+  },
+  {
+    "year": 1993,
+    "date": "1993-08-06",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_19930806_02_T1+LT05_L2SP_230075_19930806_02_T1"
+  },
+  {
+    "year": 1995,
+    "date": "1995-07-27",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 2.0,
+    "scene_id": "LT05_L2SP_230076_19950727_02_T1+LT05_L2SP_230075_19950727_02_T1"
+  },
+  {
+    "year": 1996,
+    "date": "1996-07-29",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_19960729_02_T1+LT05_L2SP_230075_19960729_02_T1"
+  },
+  {
+    "year": 1998,
+    "date": "1998-07-19",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 23.0,
+    "scene_id": "LT05_L2SP_230076_19980719_02_T1+LT05_L2SP_230075_19980719_02_T1"
+  },
+  {
+    "year": 1999,
+    "date": "1999-09-24",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_19990924_02_T1+LT05_L2SP_230075_19990924_02_T1"
+  },
+  {
+    "year": 2000,
+    "date": "2000-08-01",
+    "satellite": "LANDSAT_7",
+    "cloud_cover": 0.0,
+    "scene_id": "LE07_L2SP_230076_20000801_02_T1+LE07_L2SP_230075_20000801_02_T1"
+  },
+  {
+    "year": 2002,
+    "date": "2002-09-24",
+    "satellite": "LANDSAT_7",
+    "cloud_cover": 0.0,
+    "scene_id": "LE07_L2SP_230076_20020924_02_T1+LE07_L2SP_230075_20020924_02_T1"
+  },
+  {
+    "year": 2003,
+    "date": "2003-09-19",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_20030919_02_T1+LT05_L2SP_230075_20030919_02_T1"
+  },
+  {
+    "year": 2004,
+    "date": "2004-09-05",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_20040905_02_T1+LT05_L2SP_230075_20040905_02_T1"
+  },
+  {
+    "year": 2006,
+    "date": "2006-09-11",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_20060911_02_T1+LT05_L2SP_230075_20060911_02_T1"
+  },
+  {
+    "year": 2007,
+    "date": "2007-08-29",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.5,
+    "scene_id": "LT05_L2SP_230076_20070829_02_T1+LT05_L2SP_230075_20070829_02_T1"
+  },
+  {
+    "year": 2008,
+    "date": "2008-09-16",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_20080916_02_T1+LT05_L2SP_230075_20080916_02_T1"
+  },
+  {
+    "year": 2009,
+    "date": "2009-08-18",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.5,
+    "scene_id": "LT05_L2SP_230076_20090818_02_T1+LT05_L2SP_230075_20090818_02_T1"
+  },
+  {
+    "year": 2010,
+    "date": "2010-09-06",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_20100906_02_T1+LT05_L2SP_230075_20100906_02_T1"
+  },
+  {
+    "year": 2011,
+    "date": "2011-09-25",
+    "satellite": "LANDSAT_5",
+    "cloud_cover": 0.0,
+    "scene_id": "LT05_L2SP_230076_20110925_02_T1+LT05_L2SP_230075_20110925_02_T1"
+  },
+  {
+    "year": 2013,
+    "date": "2013-07-28",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.01,
+    "scene_id": "LC08_L2SP_230076_20130728_02_T1+LC08_L2SP_230075_20130728_02_T1"
+  },
+  {
+    "year": 2014,
+    "date": "2014-07-31",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 3.88,
+    "scene_id": "LC08_L2SP_230076_20140731_02_T1+LC08_L2SP_230075_20140731_02_T1"
+  },
+  {
+    "year": 2015,
+    "date": "2015-08-19",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 3.88,
+    "scene_id": "LC08_L2SP_230076_20150819_02_T1+LC08_L2SP_230075_20150819_02_T1"
+  },
+  {
+    "year": 2016,
+    "date": "2016-09-22",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.0,
+    "scene_id": "LC08_L2SP_230076_20160922_02_T1+LC08_L2SP_230075_20160922_02_T1"
+  },
+  {
+    "year": 2017,
+    "date": "2017-08-24",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.02,
+    "scene_id": "LC08_L2SP_230076_20170824_02_T1+LC08_L2SP_230075_20170824_02_T1"
+  },
+  {
+    "year": 2018,
+    "date": "2018-08-11",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.01,
+    "scene_id": "LC08_L2SP_230076_20180811_02_T1+LC08_L2SP_230075_20180811_02_T1"
+  },
+  {
+    "year": 2019,
+    "date": "2019-09-15",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.0,
+    "scene_id": "LC08_L2SP_230076_20190915_02_T1+LC08_L2SP_230075_20190915_02_T1"
+  },
+  {
+    "year": 2020,
+    "date": "2020-09-17",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.49,
+    "scene_id": "LC08_L2SP_230076_20200917_02_T1+LC08_L2SP_230075_20200917_02_T1"
+  },
+  {
+    "year": 2021,
+    "date": "2021-08-19",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.0,
+    "scene_id": "LC08_L2SP_230076_20210819_02_T1+LC08_L2SP_230075_20210819_02_T1"
+  },
+  {
+    "year": 2022,
+    "date": "2022-09-07",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.01,
+    "scene_id": "LC08_L2SP_230076_20220907_02_T1+LC08_L2SP_230075_20220907_02_T1"
+  },
+  {
+    "year": 2023,
+    "date": "2023-08-01",
+    "satellite": "LANDSAT_9",
+    "cloud_cover": 0.01,
+    "scene_id": "LC09_L2SP_230076_20230801_02_T1+LC09_L2SP_230075_20230801_02_T1"
+  },
+  {
+    "year": 2024,
+    "date": "2024-09-28",
+    "satellite": "LANDSAT_8",
+    "cloud_cover": 0.0,
+    "scene_id": "LC08_L2SP_230076_20240928_02_T1+LC08_L2SP_230075_20240928_02_T1"
+  }
+]

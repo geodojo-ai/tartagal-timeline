@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tartagal — Crecimiento urbano sobre líneas sísmicas | Geodojo</title>
+  <meta name="description" content="Compará el crecimiento de Tartagal (Salta) entre dos años cualesquiera entre 1984 y 2024 sobre la grilla de líneas sísmicas históricas. Una herramienta de Geodojo.">
+  <meta property="og:title" content="Tartagal · Crecimiento urbano sobre líneas sísmicas">
+  <meta property="og:description" content="Visor interactivo de cambio temporal sobre líneas sísmicas. Geodojo.">
+  <meta property="og:image" content="https://www.geodojo.ai/og-image.png">
+  <link rel="icon" href="https://www.geodojo.ai/favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GA4: misma property que www.geodojo.ai para datos unificados -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0C1DLZ52Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q0C1DLZ52Q', {
+      page_title: 'Tartagal · Visor sísmico',
+      app_name: 'tartagal-timeline'
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <a class="logo" href="https://www.geodojo.ai/?utm_source=tartagal-timeline&utm_medium=visor&utm_campaign=mancha-urbana-sismica&utm_content=header-logo" target="_blank" rel="noopener" title="Geodojo">
+      <img src="geodojo-logo.png" alt="Geodojo">
+    </a>
+    <div class="title-block">
+      <div class="title">Tartagal · Crecimiento urbano sobre líneas sísmicas</div>
+      <div class="subtitle">Comparador temporal 1984 — 2024</div>
+    </div>
+  </header>
+
+  <main>
+    <div id="map"></div>
+
+    <!-- Curtain swipe overlay sobre el mapa -->
+    <div id="swipe-line">
+      <div id="swipe-handle" aria-label="Arrastrar para comparar años">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 6l-6 6 6 6V6zm6 0v12l6-6-6-6z"/></svg>
+      </div>
+    </div>
+    <div id="badge-left" class="year-badge">—</div>
+    <div id="badge-right" class="year-badge">—</div>
+
+    <aside class="panel">
+      <div class="control">
+        <label for="base">Año base</label>
+        <select id="base"></select>
+        <div id="base-meta" class="meta">—</div>
+      </div>
+
+      <div class="control">
+        <label for="compare">Año comparación</label>
+        <select id="compare"></select>
+        <div id="compare-meta" class="meta">—</div>
+      </div>
+
+      <div class="control">
+        <button id="play" type="button">▶ Animar comparación</button>
+        <div class="hint">avanza el año derecho hasta el final</div>
+      </div>
+
+      <div class="control">
+        <label for="opacity">Líneas sísmicas <span id="opacity-label">85%</span></label>
+        <input type="range" id="opacity" min="0" max="100" value="85" step="5">
+      </div>
+
+      <div class="control">
+        <label class="toggle">
+          <input type="checkbox" id="basemap" checked> Mapa base (OSM)
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="show-source"> Referencia periodística
+        </label>
+      </div>
+
+      <div class="legend">
+        <div><span class="dot" style="background:#00ff5a"></span> Líneas sísmicas históricas</div>
+        <div class="hint">Arrastrá la línea vertical sobre el mapa</div>
+        <div class="source">
+          Fuentes:
+          <ul>
+            <li><a href="https://www.lanacion.com.ar/economia/explosivos-enterrados-nid24042026/"
+              target="_blank" rel="noopener">La Nación · Explosivos enterrados (2026)</a></li>
+            <li><a href="https://opsur.org.ar/2022/12/01/el-norte-salteno-es-un-campo-minado-con-boosters-petroleros/"
+              target="_blank" rel="noopener">OPSUR · El norte salteño es un campo minado (2022)</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Imágenes Landsat C2 L2 vía Microsoft Planetary Computer · Líneas sísmicas: dataset histórico del área</span>
+    <a href="https://www.geodojo.ai/?utm_source=tartagal-timeline&utm_medium=visor&utm_campaign=mancha-urbana-sismica&utm_content=footer-link" target="_blank" rel="noopener">Una herramienta de <strong>Geodojo</strong></a>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

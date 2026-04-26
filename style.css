@@ -1,0 +1,347 @@
+/* Paleta Geodojo (extraída de src/pages/Index.tsx)
+   #B5B968 — olivo/mostaza (CTA primario, Carrera)
+   #B8D1E0 — celeste pastel (CTA secundario, Python)
+   Fondo blanco, texto negro, font Sora.
+*/
+:root {
+  --olive: #B5B968;
+  --olive-hover: #9a9d57;
+  --olive-soft: rgba(181, 185, 104, 0.15);
+  --olive-border: rgba(181, 185, 104, 0.4);
+  --sky: #B8D1E0;
+  --sky-hover: #a6bfce;
+  --sky-soft: rgba(184, 209, 224, 0.2);
+  --olive-dark: #595c34;
+
+  --bg: #ffffff;
+  --bg-soft: #f9fafb;
+  --map-bg: #1a1a1d;
+  --text: #111111;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --warn: #dc2626;
+
+  --line-green: #00ff5a;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500&display=swap');
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+body { display: flex; flex-direction: column; }
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.logo { display: flex; align-items: center; }
+.logo img { height: 28px; width: auto; }  /* logo negro nativo */
+
+.title-block { flex: 1; line-height: 1.2; }
+
+.title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2px;
+  font-family: 'Azeret Mono', monospace;
+}
+
+.cta {
+  background: var(--olive);
+  color: #000;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.cta:hover { background: var(--olive-hover); }
+
+/* ---------- Mapa ---------- */
+main {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+  background: var(--map-bg);
+}
+
+/* clip-path se setea inline desde JS en píxeles, calculado sobre el rect real
+   del img (no del map) para que el swipe esté siempre alineado a la línea. */
+
+/* ---------- Swipe ---------- */
+#swipe-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: white;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.2), 0 0 12px rgba(0,0,0,0.4);
+  z-index: 600;
+  transform: translateX(-1.5px);
+  pointer-events: none;
+}
+
+#swipe-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: white;
+  color: var(--olive-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+  pointer-events: auto;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--olive);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+#swipe-handle:hover  { background: var(--olive-soft); }
+#swipe-handle:active { background: var(--olive); color: #000; }
+
+.year-badge {
+  position: absolute;
+  top: 1rem;
+  background: rgba(0, 0, 0, 0.78);
+  color: white;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+  z-index: 550;
+  pointer-events: none;
+  letter-spacing: 0.04em;
+  font-family: 'Azeret Mono', monospace;
+}
+
+/* simétricos: mismo offset desde el borde del viewport en ambos lados */
+#badge-left  { left:  calc(300px + 2rem); }
+#badge-right { right: calc(300px + 2rem); }
+
+/* ---------- Panel ---------- */
+.panel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;             /* nunca pisa el footer */
+  width: 300px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  overflow-y: auto;         /* scroll si el contenido no entra */
+}
+
+.control { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.control label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.control label span {
+  color: var(--olive-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.control select {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.55rem 0.7rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.control select:focus,
+.control select:hover {
+  outline: none;
+  border-color: var(--olive);
+}
+
+.control input[type="range"] {
+  width: 100%;
+  accent-color: var(--olive);
+  cursor: pointer;
+}
+
+.control button {
+  background: var(--olive);
+  color: #000;
+  border: 0;
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.control button:hover { background: var(--olive-hover); }
+.control button.playing { background: var(--warn); color: white; }
+
+.toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500 !important;
+  color: var(--text) !important;
+  font-size: 0.85rem !important;
+}
+
+.toggle input { accent-color: var(--olive); }
+
+.meta, .hint {
+  font-size: 0.74rem;
+  color: var(--muted);
+  font-family: 'Azeret Mono', monospace;
+}
+
+.legend {
+  border-top: 1px solid var(--border);
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.legend .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.legend .source {
+  margin-top: 0.4rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--border);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.legend .source ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.legend .source li {
+  position: relative;
+  margin: 0.2rem 0;
+}
+
+.legend .source li::before {
+  content: "→";
+  position: absolute;
+  left: -1rem;
+  color: var(--olive-dark);
+}
+
+.legend .source a {
+  color: var(--olive-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legend .source a:hover { color: var(--text); }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background: var(--bg-soft);
+  color: var(--muted);
+  font-size: 0.72rem;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+footer strong { color: var(--text); }
+
+/* Leaflet zoom controls — match brand */
+.leaflet-bar a {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+.leaflet-bar a:hover {
+  background: var(--olive-soft) !important;
+  color: var(--olive-dark) !important;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 760px) {
+  header { padding: 0.5rem 0.75rem; gap: 0.5rem; }
+  .title { font-size: 0.78rem; }
+  .subtitle { font-size: 0.62rem; }
+  .panel {
+    left: 0.5rem; right: 0.5rem;
+    top: auto; bottom: 0.5rem;
+    width: auto; max-height: 55vh; overflow-y: auto;
+  }
+  #badge-right { right: 1rem; }
+  footer { font-size: 0.65rem; flex-direction: column; gap: 0.2rem; align-items: flex-start; padding: 0.4rem 0.75rem; }
+}
