@@ -22,6 +22,9 @@
   --warn: #dc2626;
 
   --line-green: #00ff5a;
+  --alert: #c44;
+  --alert-bg: rgba(196, 68, 68, 0.07);
+  --alert-bg-strong: #fdecec;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Azeret+Mono:wght@400;500&display=swap');
@@ -83,6 +86,48 @@ header {
 }
 
 .cta:hover { background: var(--olive-hover); }
+
+/* ---------- Alert bar (banner top dismissible) ---------- */
+#alert-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 1.25rem;
+  background: var(--alert-bg-strong);
+  border-bottom: 1px solid rgba(196, 68, 68, 0.25);
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+#alert-bar[hidden] { display: none; }
+
+#alert-bar .alert-icon {
+  color: var(--alert);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+#alert-bar .alert-text { flex: 1; }
+#alert-bar .alert-text strong { color: var(--alert); }
+
+#alert-bar #alert-dismiss {
+  background: transparent;
+  border: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 0.4rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+#alert-bar #alert-dismiss:hover {
+  color: var(--alert);
+  background: rgba(196, 68, 68, 0.1);
+}
 
 /* ---------- Mapa ---------- */
 main {
@@ -270,6 +315,20 @@ main {
   margin-right: 0.5rem;
   vertical-align: middle;
 }
+
+.legend .disclaimer {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.7rem;
+  border-left: 3px solid var(--alert);
+  background: var(--alert-bg);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: var(--text);
+  border-radius: 2px;
+}
+
+.legend .disclaimer strong { color: var(--alert); }
+.legend .disclaimer p { margin: 0.35rem 0 0; }
 
 .legend .source {
   margin-top: 0.4rem;

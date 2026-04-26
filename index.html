@@ -36,6 +36,14 @@
     </div>
   </header>
 
+  <div id="alert-bar" hidden>
+    <span class="alert-icon" aria-hidden="true">⚠</span>
+    <span class="alert-text">
+      Reconstrucción aproximada a partir de fuentes públicas. <strong>No es un dataset oficial</strong> ni debe usarse como guía para evitar zonas peligrosas en terreno. Ante un hallazgo, no manipular y llamar al <strong>911</strong>.
+    </span>
+    <button id="alert-dismiss" type="button" aria-label="Cerrar aviso">×</button>
+  </div>
+
   <main>
     <div id="map"></div>
 
@@ -83,6 +91,13 @@
       <div class="legend">
         <div><span class="dot" style="background:#00ff5a"></span> Líneas sísmicas históricas</div>
         <div class="hint">Arrastrá la línea vertical sobre el mapa</div>
+
+        <div class="disclaimer">
+          <strong>⚠ Atención</strong>
+          <p>Reconstrucción visual a partir de fuentes públicas. <strong>No es un dataset oficial ni debe usarse como guía para evitar zonas peligrosas en el terreno.</strong> La presencia o ausencia de una línea no indica presencia o ausencia de explosivos.</p>
+          <p>Ante el hallazgo de un artefacto: no manipular, llamar al <strong>911</strong>.</p>
+        </div>
+
         <div class="source">
           Fuentes:
           <ul>

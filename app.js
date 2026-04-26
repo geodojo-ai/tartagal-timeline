@@ -249,6 +249,18 @@
     if (e.key === ' ') { playBtn.click(); e.preventDefault(); }
   });
 
+  // ---------- Alert bar (persistent dismiss) ----------
+  const ALERT_KEY = 'tartagal-alert-dismissed-v1';
+  const alertBar = document.getElementById('alert-bar');
+  if (!localStorage.getItem(ALERT_KEY)) {
+    alertBar.hidden = false;
+  }
+  document.getElementById('alert-dismiss').addEventListener('click', () => {
+    alertBar.hidden = true;
+    try { localStorage.setItem(ALERT_KEY, '1'); } catch (e) {}
+    track('alert_dismissed');
+  });
+
   // ---------- Tracking outbound clicks ----------
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="http"]');
