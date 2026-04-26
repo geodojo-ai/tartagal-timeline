@@ -139,11 +139,13 @@
     if (swipePx === null) swipePx = mapRect.width / 2;
     const lineX = mapRect.left + swipePx;
     const imgRect = img.getBoundingClientRect();
-    // px desde la izq del img hasta la línea (puede ser <0 o >imgWidth)
+    // Clipamos el lado IZQUIERDO del compare hasta donde está la línea:
+    // así el lado izq deja ver el base, y el der el compare (orden cronológico
+    // intuitivo y consistente con los badges 1984 ← | → 2024).
     const fromLeft = lineX - imgRect.left;
-    const rightClip = Math.max(0, imgRect.width - Math.max(0, fromLeft));
-    img.style.clipPath = `inset(0 ${rightClip}px 0 0)`;
-    img.style.webkitClipPath = `inset(0 ${rightClip}px 0 0)`;
+    const leftClip = Math.max(0, Math.min(imgRect.width, fromLeft));
+    img.style.clipPath = `inset(0 0 0 ${leftClip}px)`;
+    img.style.webkitClipPath = `inset(0 0 0 ${leftClip}px)`;
     line.style.left = `${swipePx}px`;
   }
 
