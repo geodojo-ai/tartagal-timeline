@@ -137,6 +137,7 @@
     if (!img) return;
     const mapRect = mapEl.getBoundingClientRect();
     if (swipePx === null) swipePx = mapRect.width / 2;
+    swipePx = Math.max(0, Math.min(mapRect.width, swipePx));
     const lineX = mapRect.left + swipePx;
     const imgRect = img.getBoundingClientRect();
     // Clipamos el lado IZQUIERDO del compare hasta donde está la línea:
